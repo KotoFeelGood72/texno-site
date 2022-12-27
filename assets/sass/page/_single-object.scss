@@ -1,0 +1,6 @@
+.customSingle_hero.object_hero_mod {
+	height: 84.2rem;
+	@include bp($point_2) {
+		height: 100%;
+	}
+}

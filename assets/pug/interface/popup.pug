@@ -1,0 +1,50 @@
+.popupForm.popup 
+	.popupForm_bg.popup_bg.remove_popup 
+	.popupForm_main.popup_main
+		.popupForm_close.remove_popup 
+			button(type="button")
+				+icon('close')
+		.popupForm_head 
+			h3 Обратная связь
+			p Оставьте заявку, и мы свяжемся с вами
+		.popupForm_action 
+			form.action_form.dark_form
+				+input({
+					class: 'action_input',
+					place: 'Ваше имя',
+				})
+				+input({
+					class: 'action_input',
+					place: 'Ваше телефон',
+					type: 'tel',
+				})
+				.action_notice!='Отправляя форму, вы соглашаетесь c <a href="#" target="_blank">политикой конфиденциальности.</a>'
+				+input({
+					class: 'action_btn yellow',
+					value: 'Отправить',
+					type: 'submit'
+				})
+
+.burger
+	.burger_bg.remove 
+	.burger_main
+		.burger_logo 
+			a(href="#")
+				img(src="i/header/logo.svg", alt="")
+		nav.header_nav 
+			ul.header_nav_list 
+				each item in ['Каталог', 'О компании', 'Услуги', 'Объекты', 'Статьи', 'Галерея', 'Отзывы', 'Контакты']
+					li 
+						a(href="#")=item
+		ul.header_info_list 
+			each item in ['8 (918) 434-11-40', '8 (918) 239-64-84']
+					li 
+						a(href="#")
+							.phone_icon 
+								+icon('tel')
+							p=item
+
+
+
+
+		

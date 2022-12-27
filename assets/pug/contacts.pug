@@ -1,0 +1,40 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Контакты'}
+block content_block
+	+breadcrumb(['Главная'], 'Контакты')
+	section.contacts 
+		.section_in 
+			.contacts_main 
+				.contacts_head
+					.page_title 
+						h1 Контакты 
+					ul.contacts_list
+						li.contacts_item 
+							.contacts_item_label 
+								p Телефон:
+							ul
+								-for(i = 0; i < 2; i++)
+									li 
+										a(href="#") 8 (918) 434-11-40
+						li.contacts_item 
+							.contacts_item_label 
+								p Почта:
+							ul
+								li 
+									a(href="#") technobetal@yandex.ru
+						li.contacts_item 
+							.contacts_item_label 
+								p Время работы:
+							ul
+								li 
+									p пн-пт, с 9:00 до 18:00
+						li.contacts_item 
+							.contacts_item_label 
+								p Адрес:
+							ul
+								li 
+									p Краснодар, ул.Солнечная 25, кв.23
+				.contacts_map 
+					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A36aea639b892daa05983568e2f654b328189c7c6414cd83426e6b5289f7b2fc1&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=fAlse"></script>

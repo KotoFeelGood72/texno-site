@@ -1,0 +1,122 @@
+.object_grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(84rem, 1fr));
+	grid-gap: 4rem 3.5rem;
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
+	li {
+		overflow: hidden;
+		position: relative;
+		min-height: 50.2rem;
+		@include flex-end;
+		flex-direction: column;
+		color: $white;
+		@include bp($point_2) {
+			min-height: 100%;
+		}
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			content: '';
+			background: linear-gradient(180deg, rgba(40, 49, 61, 0) 0%, rgba(40, 49, 61, 0.95) 62.94%);
+			opacity: 0;
+			transition: all .3s ease;
+			pointer-events: none;
+		}
+		&:hover {
+			&:before {
+				opacity: 1;
+			}
+			.services_item_content {
+				transform: translateY(0);
+			}
+		}
+	}
+}
+
+.object_item {
+	position: relative;
+	height: 50.2rem;
+	padding: 0 2rem 3rem 2rem;
+	overflow: hidden;
+	@include bp($point_2) {
+		height: 100%;
+		padding: 20rem 2rem 3rem 2rem;
+	}
+	a {
+		@include flex-start;
+		flex-direction: column;
+		justify-content: flex-end;
+		width: 100%;
+		height: 100%;
+	}
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background: linear-gradient(180deg, rgba(40, 49, 61, 0) 0%, rgba(40, 49, 61, 0.95) 62.94%);
+		opacity: 0;
+		transition: all .3s ease;
+		pointer-events: none;
+		@include bp($point_2) {
+			opacity: 1!important;
+		}
+	}
+	&:hover {
+		&:before {
+			opacity: 1;
+		}
+		.object_item_content {
+			transform: translateY(0);
+		}
+	}
+
+	h3 {
+		color: $white;
+		font-size: $xs;
+		font-family: $font_2;
+		font-weight: 500;
+		margin-bottom: 2rem;
+		@include txtswap(2.5rem, 1);
+		@include bp($point_2) {
+			margin-bottom: 1rem;	
+			@include txtswap(5.5rem, 2);
+		}
+	}
+
+	.object_item_content  {
+		position: relative;
+		transform: translateY(calc(100% + 3rem));
+		transition: all .3s ease;
+		@include bp($point_2) {
+			transform: translateY(0)!important;
+		}
+		p {
+			color: $white;
+			font-size: 1.6rem;
+			opacity: .85;
+			@include bp($point_2) {
+				font-size: 1.4rem;
+			}
+		}
+	}
+	.object_item_img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		@include z-index(el);
+		img {
+			object-fit: cover;
+			height: 100%;
+		}
+	}
+}

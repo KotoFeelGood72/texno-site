@@ -1,0 +1,16 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Каталог'}
+block content_block
+	+breadcrumb(['Главная'], 'Каталог')
+	section.shop 
+		.section_in 
+			.shop_main
+				.page_title 
+					h1!=array.title_inner  
+				ul.shop_grid
+					-for(i = 0; i < 6; i++) 
+						li 
+							+products
+			

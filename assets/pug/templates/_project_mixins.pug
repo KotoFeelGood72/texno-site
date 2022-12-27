@@ -1,0 +1,98 @@
+mixin btn(data)
+	if data.link === true
+		.btn.btn_link.btn-border(class=data.class)
+			a(href="#")=data.name
+	else 
+		.btn(class=`${data.class}_w`)
+			button(type=data.type ? data.type : data.type="button")=data.name ? data.name : data.name="Отправить"
+
+mixin products(data)
+	.products_card_w 
+		a(href="#").products_card
+			.products_item_img 
+				img(src="i/products/products.jpg", alt="")
+			.products_item_content 
+				.products_item_title 
+					h3 Трубы полимержелезобетонные безнапорные оволоидального сечения
+				.products_item_price 200
+				.products_item_btn.yellow 
+					button(type="button")
+						+icon('arrow')
+mixin input(data)
+	.global_input(class=data.class)
+		input(type=data.type ? data.type : data.type="text" placeholder=data.place ? data.place : '' value=data.value ? data.value : '')
+
+mixin navigation(data)
+	.slider_nav(class=`${data.class}_nav`) 
+		.slider_btn(class=`${data.class}_nav_prev`)
+			button(type="button")
+				+icon('arrow')
+		.slider_btn(class=`${data.class}_nav_next`)
+			button(type="button")
+				+icon('arrow')
+	
+mixin article(data)
+	.article
+		a(href="#")
+			.article_item_img 
+				img(src="i/products/products.jpg", alt="")
+				.article_item_btn.yellow
+					button(type="button")
+						+icon('arrow')
+			.article_item_content 
+				.article_item_title 
+					h3 Гидроизоляция зданий и сооружений
+				.article_item_txt 
+					p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt dolore "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt dolore
+				.article_item_date 20 октября, 2022
+
+mixin default_block(data)
+	.block-default(class=data.class) 
+		.section_in
+			ul.block-default_list
+				-for(i = 0; i < data.count; i++) 
+					li.global_txt
+						h2 Заголовок 1
+						if data.list === true 
+							ul
+								each item in ['Коллекторные трубы', 'Лотки, каналы', 'Сборные железобетонные резервуары', 'Металлические резервуары', 'Сборные тоннельные обделки', '«Стена в грунте»', 'Радонозащита', 'Радонозащита', 'Нефтеловушки', 'Очистные сооружения', 'Септики', 'Заглубленные сооружения', 'ЖБ плотины, водоотводы', 'Накопители', 'ЖБ фундаментные блоки']
+									li=item
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+mixin action(data)
+	section.action(class=data.class) 
+		.section_in 
+			.action_main(class=`${data.class}_main`) 
+				.action_img 
+					img(src=`i/home/${data.img}.png`, alt="")
+				.action_form_w
+					.action_title.section_title
+						h3=data.title
+					.action_txt 
+						p=data.txt
+					form.action_form
+						+input({
+							class: 'action_input',
+							place: 'Ваше имя',
+						})
+						+input({
+							class: 'action_input',
+							place: 'Ваше телефон',
+							type: 'tel',
+						})
+						+input({
+							class: 'action_btn yellow',
+							value: 'Отправить',
+							type: 'submit'
+						})
+					.action_notice!='Отправляя форму, вы соглашаетесь c <a href="#" target="_blank">политикой конфиденциальности.</a>'
+
+mixin hero(data)
+	.customSingle_hero(class=data.class)
+		.customSingle_hero_content
+			h2=data.title
+			.customSingle_hero_txt 
+				p=data.txt
+		img(src=data.img, alt="")

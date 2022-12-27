@@ -1,0 +1,162 @@
+img {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	display: block;
+}
+
+h1 {
+	font-size: $l;
+	font-family: $font_4;
+	color: $dark;
+	@include bp($point_2) {
+		font-size: $m;
+	}
+}
+// End
+.section_title {
+	margin-bottom: 6rem;
+	@include bp($point_2) {
+		margin-bottom: 3rem;
+	}
+}
+h2, h3, h4, h5, h6 {
+	font-size: $m;
+	font-family: $font_3;
+	color: $dark;
+	@include bp($point_2) {
+		font-size: $s + .6rem;
+	}
+}
+
+.global_txt {
+	p, ul, ol, span {
+		@include bp($point_2) {
+			font-size: 1.6rem;
+		}
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+	li {
+		@include bp($point_2) {
+			font-size: 1.4rem;
+		}
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+		padding-left: 1rem;
+		position: relative;
+		&:before {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			content: '-';
+		}
+	}
+}
+
+.btn-fill  {
+	@include btn($dark, $yellow, 1.8rem, $font_3, 2.2rem 8.7rem, $yellow);
+	button {
+		@include bp($point_2) {
+			font-size: 1.4rem;
+			padding: 1.5rem 4rem;
+		}
+	}
+	button {
+		text-transform: uppercase;
+	}
+}
+
+.btn_link {
+	@include btn($dark, $trans, 1.8rem, $font_3, 2.2rem 8.7rem, #28313D80);
+	&:hover {
+		a {
+			background-color: $dark;
+			color: $white;
+		}
+	}
+	a {
+		text-transform: uppercase;
+		@include bp($point_2) {
+			font-size: 1.4rem;
+			padding: 1.5rem 4rem;
+		}
+	}
+}
+
+.border-btn {
+	@include btn($dark, $trans, 1.8rem, $font_3, 2.2rem 8.7rem, #28313D80);
+	&:hover {
+		button {
+			background-color: $dark;
+			color: $white;
+		}
+	}
+	button {
+		text-transform: uppercase;
+		@include bp($point_2) {
+			font-size: 1.4rem;
+			padding: 1.5rem 4rem;
+		}
+	}
+}
+
+
+.page_title {
+	margin-bottom: 6rem;
+	@include bp($point_2) {
+		margin-bottom: 4rem;
+	}
+
+	h1 {
+		@include bp($point_2) {
+			font-size: 2.8rem;
+		}
+	}
+}
+
+.mod_default_block {
+	margin-bottom: $small-mb;
+	.section_in  {
+		@include bp($point_2) {
+			padding: 0;
+		}
+	}
+	@include bp($point_2) {
+		margin-bottom: $mobile_mb;
+	}
+}
+
+.singleProducts.no_sidebar {
+	&:before {
+		display: none;
+	}
+	.singleProducts_body {
+		max-width: 100%;
+	}
+
+	.singleGallery_slider_w {
+		overflow: hidden;
+		@include bp($point_2) {
+			overflow: visible;
+		}
+	}
+}
+
+.global_scrollbar  {
+	display: none;
+	@include bp($point_2) {
+		display: block;
+		bottom: -3rem!important;
+	}
+}
+
+.swiper {
+	@include bp($point_2) {
+		overflow: hidden!important;
+	}
+}
+
+

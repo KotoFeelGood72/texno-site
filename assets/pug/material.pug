@@ -1,0 +1,30 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Галерея'}
+block content_block
+	+breadcrumb(['Главная'], 'Галерея')
+	section.material 
+		.section_in 
+			.material_main
+				.page_title 
+					h1!=array.title_inner 
+				ul.material_list 
+					li 
+						.material_head 
+							h4 Фото
+						ul.gallery_grid 
+							-for(i = 0; i < 6; i++)
+								li 
+									a(href="i/products/products.jpg" data-fancybox)
+										img(src="i/products/products.jpg", alt="") 
+					li 
+						.material_head 
+							h4 Видео
+						ul.material_grid.gallery_grid 
+							-for(i = 0; i < 3; i++)
+								li 
+									img(src="i/products/products.jpg", alt="") 
+									.video_link_btn 
+										a(href="https://www.youtube.com/watch?v=JFTUP5XR76o" data-fancybox)
+											img(src="i/svg/video.svg", alt="")

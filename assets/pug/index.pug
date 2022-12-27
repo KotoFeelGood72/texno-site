@@ -1,0 +1,97 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Главная'}
+block content_block
+	section.hero 
+		.section_in 
+			.hero_main 
+				.hero_content 
+					.hero_title.section_title 
+						h1 Производство современных железобетонных изделий
+					.hero_txt 
+						p Железобетонная продукция собственного производства для решения отраслевых задач.
+					+btn({
+						class: 'hero_btn btn-fill trigger_callback yellow',
+						name: 'Оставить заявку'
+					})
+				.hero_img 
+					img(src="i/home/hero.png", alt="")
+	section.homeproducts 
+		.section_in 
+			.homeproducts_main 
+				.homeproducts_title.section_title 
+					h2 Популярные товары
+				.homeproducts_slider_w 
+					.homeproducts_slider.swiper 
+						.swiper-wrapper
+							-for(i = 0; i < 10; i++) 
+								.swiper-slide 
+									.homeproducts_slide 
+										+products
+					.homeproducts_nav_w 
+						.homeproducts_scrollbar.swiper-scrollbar
+						+navigation({
+							class: 'homeproducts'
+						})
+	+action({
+		img: 'action',
+		title: 'Заголовок для акции',
+		txt: 'Место под текст для описания акции',
+		class: 'home_action'
+	})
+	section.homeservice 
+		.section_in 
+			.homeservice_main
+				.section_title 
+					h3 Популярные услуги
+				.homeservice_slider_w 
+					.homeservice_slider.swiper 
+						.swiper-wrapper 
+							-for(i = 0; i < 8; i++) 
+								.swiper-slide 
+									li.services_item 
+										a(href="#") 
+											.services_item_img 
+												img(src="i/products/products.jpg", alt="")
+											.services_item_content 
+												h3 Трубы полимержелезобетонные безнапорные оволоидального сечения
+												p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+					.homeproducts_nav_w 
+						.homeservice_scrollbar.swiper-scrollbar
+						+navigation({
+							class: 'homeservice'
+						})
+	section.homeabout 
+		.section_in 
+			.homeabout_main 
+				.homeabout_content 
+					h4 О компании
+					.homeabout_content_txt.global_txt 
+						p Компания «ТехноБетал» основываясь на самых современных технологиях и научно-технических разработках, признанных во всем мире, производит уникальные изделия из железобетона и полимержелезобетона.
+						p Применение новых технологий позволяет нашим партнерам значительно продлить срок службы сооружений и снизить расходы на их дальнейшее обслуживание.
+						p Специалисты компании «ТехноБетал» сотрудничают с проектировщиками, решая задачи оптимального принятия проектных решений и предоставляют полный комплект документации со всеми необходимыми техническими расчетными данными, чертежами и спецификациями.  
+					+btn({
+						class: 'homeabout_btn btn-fill yellow',
+						name: 'узнать больше',
+						link: true,
+					})
+				.homeabout_img 
+					img(src="i/home/homeabout.jpg", alt="")
+	section.homenews 
+		.section_in 
+			.homenews_main
+				.homenews_head 
+					.homenews_title.section_title
+						h4 Наши статьи
+					+navigation({
+						class: 'homenews'
+					})
+				.homenews_slider_w 
+					.homenews_slider.swiper 
+						.swiper-wrapper
+							-for(i = 0; i < 10; i++) 
+								.swiper-slide
+									+article
+					.homenews_scrollbar.swiper-scrollbar
+								

@@ -1,0 +1,36 @@
+header.header 
+	.section_in 
+		.header_main_w 
+			.header_top 
+				.header_logo 
+					a(href="#")
+						img(src="i/header/logo.svg", alt="")
+				.header_top_info 
+					ul.header_info_list 
+						each item, i in ['technobetal@yandex.ru', '8 (918) 434-11-40', '8 (918) 239-64-84']
+							if i !== 0
+								li 
+									a(href="#")
+										.phone_icon 
+											+icon('tel')
+										p=item
+							else 
+								li 
+									a(href="#")=item
+					+btn({
+						class: 'trigger_callback btn-border',
+						name: 'Заказать звонок'
+					})
+			.header_bottom 
+				.header_shop 
+					button(type="button")
+						p Каталог
+						.shop_btn_icon 
+							span 
+							span 
+							span 
+				nav.header_nav 
+					ul.header_nav_list 
+						each item in ['Главная', 'О компании', 'Услуги', 'Объекты', 'Статьи', 'Галерея', 'Отзывы', 'Контакты']
+							li 
+								a(href="#")=item 

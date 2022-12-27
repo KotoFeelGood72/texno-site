@@ -1,0 +1,33 @@
+.breadcrumb {
+}
+.breadcrumb__list {
+	padding: 2rem 0 4rem 0;
+	@include flex-start;
+	font-size: 1.6rem;
+	li {
+		position: relative;
+		flex-wrap: wrap;
+		&:not(:last-child) {
+			&:after {
+				position: absolute;
+				top: 50%;
+				right: -1.4rem;
+				transform: translateY(-50%);
+				content: '';
+				width: .4rem;
+				height: .7rem;
+				background: url('../../i/svg/arrow-bread.svg') no-repeat center;
+			}
+			margin-right: 2.4rem;
+		}
+	}
+	a {
+		color: #a5a5a5;
+	}
+}
+.breadcrumb__item {
+}
+.breadcrumb__link {
+}
+.breadcrumb__link-current {
+}

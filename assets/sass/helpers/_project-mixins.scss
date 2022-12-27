@@ -1,0 +1,179 @@
+
+// Сброс стилей input
+@mixin app {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	background-color: transparent;
+	font-family: $font_1;
+	font-size: $font_size_base;
+}
+
+// Input end
+
+
+// Flex styles
+
+@mixin flex-center {
+	justify-content: center;
+	display: flex;
+	align-items: center;
+}
+
+@mixin flex-col {
+	flex-direction: column;
+}
+
+@mixin flex-start {
+	justify-content: flex-start;
+	display: flex;
+	align-items: center;
+}
+
+@mixin flex-space {
+	justify-content: space-between;
+	display: flex;
+	align-items: center;
+}
+
+@mixin flex-end {
+	justify-content: flex-end;
+	display: flex;
+	align-items: center;
+}
+
+// End flex styles
+
+// Style default btn
+
+@mixin absolute {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@mixin check {
+	input {
+		display: none;
+		&:checked + label:after {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	label {
+		position: relative;
+		padding-left: 4.8rem;
+		color: $dark;
+		display: block;
+		font-size: 1.6rem;
+		cursor: pointer;
+		user-select: none;
+		@include bp($point_2) {
+			padding-left: 3.5rem;
+			font-size: 1.4rem;
+		}
+		a {
+			font-size: inherit;
+			border-bottom: .1rem solid $dark;
+			transition: all .3s ease;
+			&:hover {
+				border-bottom: .1rem solid $trans;
+			}
+		}
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 3.3rem;
+			height: 3.3rem;
+			content: '';
+			border-radius: 1rem;
+			background-color: #eeeeee;
+			@include bp($point_2) {
+				width: 2.5rem;
+				height: 2.5rem;
+				border-radius: 0.5rem;
+			}
+		}
+		&:after {
+			position: absolute;
+			top: 1.3rem;
+			left: 1rem;
+			content: '';
+			width: 1.2rem;
+			height: .8rem;
+			background-image: url('../../i/global/check.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center center;
+			transition: all .3s ease;
+			opacity: 0;
+			visibility: hidden;
+			@include bp($point_2) {
+				width: 1rem;
+				top: .8rem;
+				left: .7rem;
+			}
+		}
+	}
+}
+
+@mixin btn($cr, $bgc, $fz, $fw, $pd, $br) {
+	position: relative;
+	overflow: hidden;
+	display: inline-flex;
+	button, a {
+		padding: $pd;
+		background-color: $bgc;
+		font-size: $fz;
+		font-family: $fw;
+		color: $cr;
+		width: 100%;
+		transition: all .3s ease;
+		position: relative;
+		border: .1rem solid $br;
+		&:hover {
+			opacity: .8;
+		}
+	}
+}
+
+// @include btn($dark, $trans, 1.6rem, $font_1, 1.4rem 5.3rem, $dark-opacity);
+
+@mixin input {
+	input {
+		@include app;
+		padding: 2.5rem;
+		color: $dark;
+		background-color: $white;
+		width: 100%;
+		font-size: $xxs;
+		font-family: $font_1;
+		@include bp($point_2) {
+			padding: 1.4rem 2rem;
+		}
+	}
+}
+
+@mixin popup  {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	@include z-index(popup);
+	@include flex-center;
+}
+
+@mixin txtswap($height, $stroke) {
+	overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $stroke;
+  line-height: 2.4rem;
+  max-height: $height;
+}

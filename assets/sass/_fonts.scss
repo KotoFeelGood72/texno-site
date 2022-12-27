@@ -1,0 +1,5 @@
+@include font_face('Manrope-Regular', 'Manrope-Regular', $font_path, 400);
+@include font_face('Manrope-Medium', 'Manrope-Medium', $font_path, 500);
+@include font_face('Manrope-Semibold', 'Manrope-Semibold', $font_path, 500);
+@include font_face('Manrope-Bold', 'Manrope-Bold', $font_path, 700);
+@include font_face('Manrope-ExtraBold', 'Manrope-ExtraBold', $font_path, 800);

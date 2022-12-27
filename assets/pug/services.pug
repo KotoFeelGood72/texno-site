@@ -1,0 +1,20 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Услуги'}
+block content_block
+	+breadcrumb(['Главная'], 'Услуги')
+	section.services 
+		.section_in 
+			.services_main
+				.page_title 
+					h1!=array.title_inner  
+				ul.services_grid
+					-for(i = 0; i < 8; i++) 
+						li.services_item 
+							a(href="#") 
+								.services_item_img 
+									img(src="i/products/products.jpg", alt="")
+								.services_item_content 
+									h3 Трубы полимержелезобетонные безнапорные оволоидального сечения
+									p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua

@@ -1,0 +1,33 @@
+footer.footer 
+	.section_in 
+		.footer_main_w
+			.header_top 
+				.header_logo 
+					a(href="#")
+						img(src="i/header/logo_white.svg", alt="")
+				.header_top_info 
+					ul.header_info_list 
+						each item, i in ['technobetal@yandex.ru', '8 (918) 434-11-40', '8 (918) 239-64-84']
+							if i !== 0
+								li 
+									a(href="#")
+										.phone_icon 
+											+icon('phone_white')
+										p=item
+							else 
+								li 
+									a(href="#")=item
+					+btn({
+						class: 'trigger_callback btn-border',
+						name: 'Обратный звонок'
+					})
+			.footer_bottom 
+				.footer_copyright © Все права защищены, 2022
+				.footer_col_right
+					.footer_policy 
+						a(href="#") Политика конфиденциальности 
+					.footer_arkada 
+						a(href="#")
+							p Разработано arkada-web.ru
+							.footer_arkada_logo 
+								img(src="i/inc/arkada.png", alt="") 

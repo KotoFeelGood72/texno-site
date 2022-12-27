@@ -1,0 +1,39 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Название объекстатьита'}
+block content_block
+	+breadcrumb(['Главная', 'Cтатьи'], 'Название статьи ')
+	section.singleArticle 
+		.section_in 
+			.singleArticle_main_w
+				.page_title.single_article_title 
+					h1 Название статьи
+				.singleArticle_head 
+					.singleArticle_head_img 
+						img(src="i/products/products.jpg", alt="")
+					.singleArticle_head_content
+						.single_date 20 октября, 2022
+						.singleArticle_head_txt.global_txt 
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+				+default_block({
+					count: 2,
+					class: 'mod_default_block'
+				})
+	section.homenews.single_slider_news 
+		.section_in 
+			.homenews_main
+				.homenews_head 
+					.homenews_title.section_title
+						h4 Похожие статьи
+					+navigation({
+						class: 'homenews'
+					})
+				.homenews_slider_w 
+					.homenews_slider.swiper 
+						.swiper-wrapper
+							-for(i = 0; i < 10; i++) 
+								.swiper-slide
+									+article
+					.homenews_scrollbar.swiper-scrollbar

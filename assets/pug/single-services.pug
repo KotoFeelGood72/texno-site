@@ -1,0 +1,51 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Название услуги'}
+block content_block
+	+breadcrumb(['Главная', 'Услуги'], 'Название услуги ')
+	section.singleProducts 
+		.section_in 
+			.singleProducts_main 
+				.sidebar_w 
+					.sidebar 
+						ul.sidebar_nav 
+							each item in ['Подзаголовок 1', 'Подзаголовок 2', 'Реализованные объекты']
+								li 
+									a(href="#")=item
+						+btn({
+							name: 'Заказать',
+							class: 'border-btn trigger_callback'
+						})
+				.singleProducts_body 
+					.page_title 
+						h1!=array.title_inner
+					+hero({
+						title: 'Заголовок',
+						img: 'i/products/products.jpg',
+						txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.'
+					})
+					+default_block({
+						count: 2,
+						class: 'mod_default_block'
+					})
+					.block-gallery 
+						.block-gallery_head 
+							h4 Реализованные объекты
+							+navigation({
+								class: 'singleObjectGallery'
+							})
+						.singleObjectGallery_slider_w 
+							.singleObjectGallery_slider.swiper 
+								.swiper-wrapper
+									-for(i = 0; i < 12; i++)
+										.swiper-slide
+											.singleObjectGallery_slide.object_item 
+												a(href="#")
+													.object_item_img 
+														img(src="i/products/products.jpg", alt="")
+													.object_item_content 
+														h3 Рекультивация полигона ТКО «Царёво»
+														p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+							.singleObject_scrollbar.global_scrollbar.swiper-scrollbar
+						

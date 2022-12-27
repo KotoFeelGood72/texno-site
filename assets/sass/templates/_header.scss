@@ -1,0 +1,176 @@
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: $header;
+	width: 100%;
+	will-change: transform;
+	@include z-index(header);
+	font-size: $xs;
+	font-family: $font_3;
+	@include bp($point_2) {
+		height: $header_mob;
+	}
+}
+
+.header {
+}
+.section_in {
+}
+.header_main_w {
+	padding-top: 2.3rem;
+	@include bp($point_2) {
+		@include flex-space;
+		padding-top: 1.5rem;
+	}
+}
+.header_top {
+	@include flex-space;
+	margin-bottom: 2.4rem;
+	@include bp($point_2) {
+		margin-bottom: 0;
+	}
+}
+.header_logo {
+	max-width: 18.7rem;
+	a {
+		@include flex-center;
+		width: 100%;
+	}
+}
+.header_top_info {
+	@include flex-start;
+	@include bp($point_2) {
+			display: none;
+		}
+}
+.header_info_list {
+	@include flex-start;
+	margin-right: 2rem;
+	@include bp($point_2) {
+			display: none;
+		}
+	li {
+		margin-right: 7rem;
+		&:not(:first-child) {
+			margin-right: 5rem;
+		}
+		a {
+			@include flex-start;
+			color: $dark;
+		}
+	}
+}
+.phone_icon {
+	margin-right: 1rem;
+	width: 2.2rem;
+	height: 2.2rem;
+	@include flex-center;
+}
+
+.btn-border_w {
+	@include btn($dark, $trans, 1.6rem, $font_1, 1.4rem 5.3rem, $dark-opacity);
+}
+
+.header_bottom {
+	@include flex-start;
+	background-color: $gray;
+	@include bp($point_2) {
+		background-color: $trans;
+	}
+}
+.header_shop {
+	margin-right: 8.8rem;
+	@include bp($point_2) {
+		margin-right: 0;
+	}
+	&.active {
+		p {
+			opacity: 0;
+		}
+		.shop_btn_icon {
+			margin-bottom: -1.5rem;
+			span {
+				&:nth-child(1) {
+					transform: rotate(45deg);
+					margin-bottom: -0.2rem;
+				}
+				&:nth-child(2) {
+					display: none;
+				}
+				&:nth-child(3) {
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+	button {
+		background-color: $dark;
+		color: $white;
+		padding: 2.2rem 10rem 2.2rem 11.1rem;
+		@include flex-center;
+		@include bp($point_2) {
+			padding: 1.5rem 2rem;
+		}
+		p {
+			margin-right: 2rem;
+			font-family: $font_3;
+			@include bp($point_2) {
+				margin-right: 1.5rem;
+				font-size: 1.6rem;
+			}
+		}
+	}
+}
+.shop_btn_icon {
+	width: 2rem;
+	height: 1.6rem;
+	span {
+		border-bottom: .2rem solid $white;
+		width: 100%;
+		display: block;
+		border-radius: 1rem;
+		&:nth-child(2) {
+			margin: .5rem 0;
+		}
+	}
+}
+.header_nav {
+	@include bp($point_2) {
+		display: none;
+	}
+}
+.header_nav_list {
+	@include flex-start;
+	flex: 1;
+	li {
+		&:not(:last-child) {
+			margin-right: 9rem;
+		}
+		a {
+			padding: 2.2rem 0;
+			@include flex-center;
+			// border-bottom: .2rem solid $trans;
+			position: relative;
+			&:before {
+				position: absolute;
+				height: .2rem;
+				background-color: $dark;
+				content: '';
+				bottom: 1.8rem;
+				opacity: 0;
+				transition: all .2s ease;
+				width: 100%;
+				transform: scaleX(0);
+				transform-origin: left;
+			}
+			&:hover {
+				color: $dark;
+				&:before {
+					transform: scaleX(1);
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
