@@ -48,6 +48,7 @@
 .sidebar {
 	width: 100%;
 	height: auto;
+	min-width: 31.2rem;
 	@include bp($point_2) {
 		@include flex-start;
 		overflow: auto;
@@ -150,7 +151,7 @@
 	@include bp($point_2) {
 		padding: 30rem 2rem 3rem 2rem;
 	}
-	h2 {
+	h2, h3, h4, h5, h6 {
 		font-size: 2rem;
 		text-transform: uppercase;
 		margin-bottom: 1.5rem;

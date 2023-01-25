@@ -606,27 +606,38 @@ function checkLastCol() {
 		}
 	});
 }
+ 
+// const array = [
+// 	{
+// 		id: 1,
+// 		name: 'Alexey',
+// 		number: 1
+// 	},
+// 	{
+// 		id: 2,
+// 		name: 'Alex',
+// 		number: 1
+// 	},
+// 	{
+// 		id: 3,
+// 		name: 'Sofia',
+// 		number: 1
+// 	},
+// 	{
+// 		id: 4,
+// 		name: 'Victor',
+// 		number: 1
+// 	}
+// ]
 
+// const arrayMap = array.map((item)=>{
+// 	const name = item.name.split('');
+// 	return name.filter((itemFilter)=> {
+		
+// 	})
+// })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// console.log('arrayMap',arrayMap);
 
 
 

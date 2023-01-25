@@ -94,6 +94,7 @@
 }
 .products_item_content {
 	padding: 2rem 2rem 1.7rem 2rem;
+	width: 100%;
 }
 .products_item_title {
 	h3 {
@@ -197,7 +198,7 @@
 		}
 	}
 
-	h3 {
+	h2, h3, h4, h5, h6 {
 		color: $white;
 		font-size: $xs;
 		font-family: $font_2;
