@@ -155,6 +155,7 @@
 		font-size: 2rem;
 		text-transform: uppercase;
 		margin-bottom: 1.5rem;
+		color: $white;
 		@include bp($point_2) {
 			font-size: 1.8rem;
 			margin-bottom: 1rem;
